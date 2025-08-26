@@ -1,8 +1,8 @@
-/* Mobile-first responsive header */
+/* Beautiful Mobile-First Header - Amazon/Walmart Style */
 .afroShopUg {
-  background-color: rgb(19, 25, 33);
+  background: linear-gradient(135deg, rgb(19, 25, 33) 0%, rgb(25, 32, 42) 100%);
   color: white;
-  padding: 0 12px;
+  padding: 0 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,137 +10,272 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 56px;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
 
-/* Mobile: Compact left section */
-.afroShopUg-left-section {
-  flex-shrink: 0;
+/* Add subtle animation on load */
+.afroShopUg {
+  animation: slideDown 0.3s ease-out;
 }
 
-/* Tablet and desktop: Fixed width */
-@media (min-width: 768px) {
-  .afroShopUg-left-section {
-    width: 180px;
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
   }
-  
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Progressive enhancement for larger screens */
+@media (min-width: 400px) {
+  .afroShopUg {
+    padding: 0 12px;
+    height: 60px;
+  }
+}
+
+@media (min-width: 768px) {
   .afroShopUg {
     padding: 0 20px;
+    height: 64px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .afroShopUg {
+    padding: 0 32px;
+  }
+}
+
+/* Left Section - Logo */
+.afroShopUg-left-section {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .afroShopUg-left-section {
+    width: 160px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .afroShopUg-left-section {
+    width: 200px;
   }
 }
 
 .header-link {
-  display: inline-block;
-  padding: 6px;
-  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
-  border: 1px solid rgba(0, 0, 0, 0);
-  transition: border-color 0.2s ease;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
 }
 
 .header-link:hover {
-  border: 1px solid white;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .afroShopUg-logo {
-  width: 80px;
-  margin-top: 5px;
+  width: 50px;
+  height: auto;
+  transition: transform 0.2s ease;
 }
 
-/* Hide logo on very small screens */
-@media (max-width: 480px) {
+.header-link:hover .afroShopUg-logo {
+  transform: scale(1.05);
+}
+
+/* Logo responsive sizing */
+@media (min-width: 400px) {
   .afroShopUg-logo {
-    width: 60px;
+    width: 65px;
   }
 }
 
 @media (min-width: 768px) {
   .afroShopUg-logo {
-    width: 100px;
+    width: 80px;
   }
 }
 
-/* Mobile-first search section */
+@media (min-width: 1200px) {
+  .afroShopUg-logo {
+    width: 95px;
+  }
+}
+
+/* Beautiful Search Section - Mobile First */
 .afroShopUg-middle-section {
   flex: 1;
-  margin: 0 12px;
+  margin: 0 8px;
   display: flex;
   max-width: none;
+  position: relative;
+}
+
+@media (min-width: 400px) {
+  .afroShopUg-middle-section {
+    margin: 0 12px;
+  }
 }
 
 @media (min-width: 768px) {
   .afroShopUg-middle-section {
-    max-width: 850px;
-    margin: 0 20px;
+    max-width: 700px;
+    margin: 0 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .afroShopUg-middle-section {
+    max-width: 900px;
+    margin: 0 32px;
   }
 }
 
 .search-bar {
   flex: 1;
-  font-size: 16px;
+  font-size: 14px;
   height: 36px;
-  padding: 0 12px;
-  border: none;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  padding: 0 10px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-right: none;
+  border-radius: 6px 0 0 6px;
   outline: none;
+  background: white;
+  color: #333;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.search-bar:focus {
+  border-color: #ff9900;
+  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.2);
+}
+
+.search-bar::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Search bar responsive sizing */
+@media (min-width: 400px) {
+  .search-bar {
+    font-size: 15px;
+    height: 38px;
+    padding: 0 12px;
+  }
 }
 
 @media (min-width: 768px) {
   .search-bar {
-    height: 38px;
-    padding: 0 15px;
+    font-size: 16px;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 8px 0 0 8px;
   }
 }
 
 .search-button {
-  background-color: #54AEFF;
-  border: none;
-  width: 40px;
-  height: 38px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  background: linear-gradient(135deg, #ff9900 0%, #e68a00 100%);
+  border: 2px solid #ff9900;
+  border-left: none;
+  width: 36px;
+  height: 40px;
+  border-radius: 0 6px 6px 0;
   flex-shrink: 0;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .search-button:hover {
-  background-color: #4A9EEF;
+  background: linear-gradient(135deg, #e68a00 0%, #cc7700 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 153, 0, 0.3);
+}
+
+.search-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(255, 153, 0, 0.3);
+}
+
+/* Search button responsive sizing */
+@media (min-width: 400px) {
+  .search-button {
+    width: 38px;
+    height: 42px;
+  }
 }
 
 @media (min-width: 768px) {
   .search-button {
-    width: 45px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
+    border-radius: 0 8px 8px 0;
   }
 }
 
 .search-icon {
-  height: 18px;
-  width: 18px;
+  height: 16px;
+  width: 16px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease;
+}
+
+.search-button:hover .search-icon {
+  transform: scale(1.1);
+}
+
+@media (min-width: 400px) {
+  .search-icon {
+    height: 18px;
+    width: 18px;
+  }
 }
 
 @media (min-width: 768px) {
   .search-icon {
-    height: 22px;
-    width: 22px;
+    height: 20px;
+    width: 20px;
   }
 }
 
-/* Mobile-first right section */
+/* Beautiful Cart Section - Mobile First */
 .afroShopUg-right-section {
   flex-shrink: 0;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
   .afroShopUg-right-section {
-    width: 180px;
+    width: 160px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .afroShopUg-right-section {
+    width: 200px;
   }
 }
 
@@ -159,77 +294,132 @@
   font-weight: 700;
 }
 
-/* Mobile-first cart styling */
+/* Beautiful Cart Link */
 .cart-link {
   color: white;
   display: flex;
   align-items: center;
   position: relative;
   text-decoration: none;
-  padding: 8px;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .cart-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Cart Icon */
 .cart-icon {
-  width: 40px;
-  height: 32px;
+  width: 32px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease;
+}
+
+.cart-link:hover .cart-icon {
+  transform: scale(1.1);
+}
+
+@media (min-width: 400px) {
+  .cart-icon {
+    width: 36px;
+    height: 32px;
+  }
 }
 
 @media (min-width: 768px) {
   .cart-icon {
-    width: 50px;
-    height: 40px;
+    width: 40px;
+    height: 36px;
+  }
+  
+  .cart-link {
+    padding: 8px 12px;
+    border-radius: 8px;
   }
 }
 
+/* Cart Text */
 .cart-text {
-  margin-top: 8px;
-  font-size: 13px;
-  font-weight: 700;
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 600;
   margin-left: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 /* Hide cart text on very small screens */
-@media (max-width: 480px) {
+@media (max-width: 360px) {
   .cart-text {
     display: none;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 400px) {
   .cart-text {
-    margin-top: 12px;
-    font-size: 15px;
-    margin-left: 0;
+    font-size: 12px;
+    margin-left: 6px;
   }
 }
 
+@media (min-width: 768px) {
+  .cart-text {
+    margin-top: 6px;
+    font-size: 13px;
+    margin-left: 8px;
+  }
+}
+
+/* Beautiful Cart Quantity Badge */
 .cart-quantity {
-  color: #ff9900; 
-  font-size: 14px;
+  color: #000;
+  font-size: 11px;
   font-weight: 700;
-  background: white;
-  border-radius: 10px;
+  background: linear-gradient(135deg, #ff9900 0%, #ffb84d 100%);
+  border-radius: 12px;
   padding: 2px 6px;
-  min-width: 20px;
+  min-width: 18px;
   text-align: center;
   position: absolute;
-  top: 2px;
-  left: 24px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  top: -2px;
+  left: 20px;
+  box-shadow: 0 2px 6px rgba(255, 153, 0, 0.4);
+  border: 2px solid white;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@media (min-width: 400px) {
+  .cart-quantity {
+    font-size: 12px;
+    padding: 3px 7px;
+    min-width: 20px;
+    top: -3px;
+    left: 22px;
+    border-radius: 14px;
+  }
 }
 
 @media (min-width: 768px) {
   .cart-quantity {
-    font-size: 16px;
-    top: 4px;
-    left: 30px;
-    padding: 2px 8px;
-    min-width: 24px;
+    font-size: 13px;
+    padding: 4px 8px;
+    min-width: 22px;
+    top: -4px;
+    left: 24px;
+    border-radius: 16px;
   }
 }
