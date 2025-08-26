@@ -35,7 +35,7 @@
   .products-grid {
     gap: 12px;
   }
-  
+
   .main {
     padding: 12px;
   }
@@ -46,7 +46,7 @@
   .products-grid {
     gap: 16px;
   }
-  
+
   .main {
     padding: 16px;
   }
@@ -58,7 +58,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
-  
+
   .main {
     padding: 20px;
   }
@@ -70,7 +70,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
   }
-  
+
   .main {
     padding: 24px;
   }
@@ -128,7 +128,7 @@
   .product-container {
     padding: 10px;
   }
-  
+
   .product-image-container {
     height: 120px;
     margin-bottom: 6px;
@@ -146,7 +146,7 @@
   .product-container {
     padding: 14px;
   }
-  
+
   .product-image-container {
     height: 160px;
     margin-bottom: 12px;
@@ -157,7 +157,7 @@
   .product-container {
     padding: 16px;
   }
-  
+
   .product-image-container {
     height: 180px;
   }
@@ -285,9 +285,9 @@
   border-radius: 16px;
   font-size: 12px;
   font-weight: 600;
-  background: #ff9900;
-  border: 1px solid #ff9900;
-  color: #000;
+  background: linear-gradient(135deg, #6b46c1 0%, #8b5cf6 100%);
+  border: 1px solid #6b46c1;
+  color: white;
   cursor: pointer;
   transition: all 0.2s ease;
   text-transform: none;
@@ -296,15 +296,15 @@
 }
 
 .add-to-cart-button:hover {
-  background: #fa8900;
-  border-color: #fa8900;
+  background: linear-gradient(135deg, #553c9a 0%, #7c3aed 100%);
+  border-color: #553c9a;
   transform: translateY(-1px);
-  box-shadow: 0 2px 6px rgba(255, 153, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(107, 70, 193, 0.3);
 }
 
 .add-to-cart-button:active {
   transform: translateY(0);
-  box-shadow: 0 1px 3px rgba(255, 153, 0, 0.3);
+  box-shadow: 0 1px 3px rgba(107, 70, 193, 0.3);
 }
 
 /* Mobile button adjustments for 2-column layout */
@@ -315,12 +315,12 @@
     min-height: 32px;
     border-radius: 14px;
   }
-  
+
   .added-to-cart {
     font-size: 10px;
     margin-bottom: 4px;
   }
-  
+
   .added-to-cart img {
     height: 10px;
     width: 10px;
@@ -335,12 +335,12 @@
     min-height: 38px;
     border-radius: 18px;
   }
-  
+
   .added-to-cart {
     font-size: 12px;
     margin-bottom: 8px;
   }
-  
+
   .added-to-cart img {
     height: 14px;
     width: 14px;
@@ -355,11 +355,11 @@
     min-height: 40px;
     border-radius: 20px;
   }
-  
+
   .added-to-cart {
     font-size: 13px;
   }
-  
+
   .added-to-cart img {
     height: 16px;
     width: 16px;
@@ -408,7 +408,7 @@
 }
 
 .star-half::after {
-  content: '☆';
+  content: "☆";
   position: absolute;
   left: 50%;
   color: #ddd;
@@ -435,11 +435,11 @@
   .star {
     font-size: 11px;
   }
-  
+
   .rating-count {
     font-size: 9px;
   }
-  
+
   .product-rating {
     gap: 3px;
     margin-bottom: 4px;
@@ -450,11 +450,11 @@
   .star {
     font-size: 13px;
   }
-  
+
   .rating-count {
     font-size: 11px;
   }
-  
+
   .product-rating {
     gap: 6px;
     margin-bottom: 8px;
@@ -465,11 +465,11 @@
   .star {
     font-size: 14px;
   }
-  
+
   .rating-count {
     font-size: 12px;
   }
-  
+
   .product-rating {
     gap: 8px;
   }
@@ -487,11 +487,11 @@
   .product-image {
     transition: none;
   }
-  
+
   .product-container:hover {
     transform: none;
   }
-  
+
   .add-to-cart-button:hover {
     transform: none;
   }
@@ -499,11 +499,50 @@
 
 /* Focus styles for accessibility */
 .add-to-cart-button:focus {
-  outline: 2px solid #007185;
+  outline: 2px solid #8b5cf6;
   outline-offset: 2px;
 }
 
 .search-bar:focus {
-  outline: 2px solid #ff9900;
+  outline: 2px solid #8b5cf6;
   outline-offset: 1px;
+}
+
+/* No results styling */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.no-results h3 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.no-results p {
+  color: #666;
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .no-results {
+    padding: 30px 16px;
+  }
+  
+  .no-results h3 {
+    font-size: 20px;
+  }
+  
+  .no-results p {
+    font-size: 14px;
+  }
 }

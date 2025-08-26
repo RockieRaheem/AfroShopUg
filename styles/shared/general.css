@@ -27,7 +27,9 @@ select {
   cursor: pointer;
 }
 
-input, select, button {
+input,
+select,
+button {
   font-family: Roboto, Arial, sans-serif;
 }
 
@@ -36,30 +38,30 @@ img {
   height: auto;
 }
 
-/* Enhanced button styles */
+/* Enhanced button styles with purple theme */
 .button-primary {
-  color: rgb(33, 33, 33);
-  background-color: #ff9900;
-  border: 1px solid #ff9900;
+  color: white;
+  background: linear-gradient(135deg, #6b46c1 0%, #8b5cf6 100%);
+  border: 1px solid #6b46c1;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+  box-shadow: 0 2px 5px rgba(107, 70, 193, 0.3);
   transition: all 0.2s ease;
   font-weight: 600;
 }
 
 .button-primary:hover {
-  background-color: #fa8900;
-  border-color: #fa8900;
+  background: linear-gradient(135deg, #553c9a 0%, #7c3aed 100%);
+  border-color: #553c9a;
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(255, 153, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(107, 70, 193, 0.4);
 }
 
 .button-primary:active {
-  background-color: #e07b00;
-  border-color: #e07b00;
+  background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 100%);
+  border-color: #4c1d95;
   transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(255, 153, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(107, 70, 193, 0.4);
 }
 
 .button-secondary {
@@ -93,11 +95,10 @@ img {
 }
 
 .link-primary:hover {
-  color: #409EFF;
-
+  color: #409eff;
 }
 
 select:focus,
 input:focus {
-  outline: 2px solid #4A9EEF;
+  outline: 2px solid #4a9eef;
 }
