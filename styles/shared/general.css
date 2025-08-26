@@ -1,7 +1,15 @@
+/* Mobile-first general styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Roboto, Arial;
+  font-family: Roboto, Arial, sans-serif;
   color: rgb(33, 33, 33);
   margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  background-color: #f3f3f3;
 }
 
 p {
@@ -10,6 +18,9 @@ p {
 
 button {
   cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
 }
 
 select {
@@ -17,27 +28,38 @@ select {
 }
 
 input, select, button {
-  font-family: Roboto, Arial;
+  font-family: Roboto, Arial, sans-serif;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Enhanced button styles */
 .button-primary {
   color: rgb(33, 33, 33);
-  background-color: #54AEFF;
-  border: 1px solid #4A9EEF;
+  background-color: #ff9900;
+  border: 1px solid #ff9900;
   border-radius: 8px;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+  transition: all 0.2s ease;
+  font-weight: 600;
 }
 
 .button-primary:hover {
-  background-color: #4A9EEF;
-  color: whitesmoke;
+  background-color: #fa8900;
+  border-color: #fa8900;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 153, 0, 0.3);
 }
 
 .button-primary:active {
-  background-color: #54AEFF;
-  border-color: #4A9EEF;
-  box-shadow: none;
+  background-color: #e07b00;
+  border-color: #e07b00;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(255, 153, 0, 0.3);
 }
 
 .button-secondary {
